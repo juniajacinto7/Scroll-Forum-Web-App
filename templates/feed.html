@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Grader App</title>
+      <link rel="stylesheet" href= "{{ url_for('static', filename='style.css') }}">
+      <script src="{{url_for('static', filename='myScript.js')}}"></script>
+    </head>
+    <body onload="getPost();">
+      <div></div>
+
+      <h2>Feed</h2>
+
+      <button type="button" onclick="getPost();">feed</button>
+      <button type="button" onclick="getComm();">communities</button>
+      <button onclick="window.location.href='/submit';">post</button>
+      <button onclick="window.location.href='/profile';">profile</button>
+      <br>
+
+      <table id="display"></table>
+
+      </body>
+
+</html>

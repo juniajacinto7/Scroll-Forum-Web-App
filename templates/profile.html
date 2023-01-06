@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Grader App</title>
+      <link rel="stylesheet" href= "{{ url_for('static', filename='style.css') }}">
+      <script src="{{url_for('static', filename='myScript.js')}}"></script>
+
+      <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+    </head>
+    <body onload="getPostOfUser()">
+      <div></div>
+
+      <h2>Profile: {{ name }}</h2>
+      
+      <h2 id = "profile">{{ name }}</h2>
+
+      <button type="button" onclick="getPostOfUser();">my posts</button>
+      <button type="button" onclick="getCommOfUser();">my communities</button>
+      <br>
+
+      <table id="display"></table>
+
+      </body>
+
+</html>

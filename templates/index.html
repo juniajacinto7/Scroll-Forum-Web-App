@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Grader App</title>
+      <link rel="stylesheet" href= "{{ url_for('static', filename='style.css') }}">
+      <script src="{{url_for('static', filename='myScript.js')}}"></script>
+    </head>
+    <body>
+      <div></div>
+
+      <h2>Grader App</h2>
+
+      <input type="text" placeholder="student name " id="inputId">
+      <input type="text" placeholder="student grade " id="inputId2">
+
+      <button type="button" onclick="getComm();">Get Communities</button>
+      <button type="button" onclick="getPost();">Get Post</button>
+      <button type="button" onclick="changeGrade();">Edit Grade</button>
+      <button type="button" onclick="deleteGrade();">Delete Grade</button>
+      <button type="button" onclick="getGrades();">List Grades</button>
+
+      <p id="display"></p>
+
+      </body>
+
+</html>

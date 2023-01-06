@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BART - OCC Journal Entry Log</title>
+
+    <!-- Stylesheets -->
+
+    <!-- awesomplete Stylesheet - -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.css"/>
+
+    <!-- quill - theme included stylesheets -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+    <style>
+        
+        #editor-container{
+          border:1px solid black;
+          height: 200px;
+        }
+
+        #con-for-form{
+          border:1px solid black;
+          width: 800px;
+        }
+
+        #community, #title {
+        display: inline-block;
+        border-radius: 10px;
+        border: 4px double;
+        border-color: black;
+        font-size: 22px;
+        padding: 15px;
+        width: 700px;
+        height: 18px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        color: black;
+        font-family: "Poppins", sans-serif;
+  }
+        
+    </style>
+</head>
+
+<body>
+
+    <h2>Post</h2>
+    <div id = con-for-form>
+
+    <!-- beginning of form  -->
+    <form id = "editor-form" action = "http://localhost:5000/registerlog" method = "post">
+
+         <!-- title label and input -->
+         <input type="text" id="community" name="community" size="100" placeholder="Community">  <!-- break tags for proper spacing -->
+
+        <!-- title label and input -->
+        <input type="text" id="title" name="title" size="100" placeholder="Title">  <!-- break tags for proper spacing -->
+    
+        <!-- description label and input -->
+        <input name="about" type="hidden"> <!-- we assign the contents of the quill editor to this hidden input -->
+        <!-- editor-container id is used to create text editor with quill.js library | see myScript.js for initlization -->                       <!-- -->
+        <div id="editor-container"></div>
+    
+        <!-- submit button to submit log -->
+        <input type="submit" value="Submit">
+    
+    <!-- end of form -->
+    </form>
+</div>
+  
+
+    <!--Libraries and Local Scripts-->
+
+    <!-- main quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+    <!-- awesome complete library -->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.js"></script>
+
+    <!-- cleave library --> <!--used to control user input for date and refrence -->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
+
+    <!-- local javaScipt file -->
+    <script src="{{url_for('static', filename='myScript1.js')}}"></script> <!-- refrence to javaScript using Flask-->
+   
+</body>
+
+</html>
